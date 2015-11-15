@@ -36,13 +36,19 @@ describe('Generator', function (){
 			}
 		});
 		
-		it('should be in a random order');
+		it('should be in a random order', function  () {
+		var arr1 = generator(3);
+		var arr2 = generator(3);
+		expect(arr1).to.not.deep.equal(arr2);
+		});
 		
 		it('should be unique numbers', function  () {
 			 var arr = generator(20);
+
 			 for(var i =0; i < arr.length; i++) {
 			 expect(i).to.equal(arr.indexOf(arr[i]));
 			 }
+			 expect(arr).to.have.length(20);
 		});
 
 	});
